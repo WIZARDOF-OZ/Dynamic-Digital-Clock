@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Orbitron", sans-serif;
+  transition: all 0.4s ease;
 }
 
 section {
@@ -15,6 +16,11 @@ section {
   align-items: center;
   justify-content: center;
   background: #f0f8ff;
+  padding: 0 20px;
+}
+
+section.dark {
+  background: #24292d;
 }
 
 section .container {
@@ -30,12 +36,39 @@ section .container {
   position: relative;
 }
 
+section.dark .container {
+  background: #323840;
+}
+
 section .container .icons i {
   position: absolute;
-right: 17px;
-top: 17px;
-height: 17px;
-width: 17px;   /* paused  at 9:48 minutes */
+  right: 17px;
+  top: 17px;
+  height: 30px;
+  width: 30px;
+  background: #24292d;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+section.dark .container .icons i {
+  background: #fff;
+  color: #323840;
+}
+
+.container .icons i.fa-sun {
+  opacity: 0;
+  pointer-events: none;
+}
+
+section.dark .container .icons i.fa-sun {
+  opacity: 1;
+  pointer-events: auto;
+  font-size: 16px;
 }
 
 section .container .time {
@@ -58,6 +91,10 @@ section .container .time {
   letter-spacing: 1px;
 }
 
+section.dark .time .time-colon .am_pm {
+color: #fff;
+}
+
 .time .time-colon .time-text {
   height: 100px;
   width: 100px;
@@ -70,19 +107,33 @@ section .container .time {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+section.dark .time .time-colon .time-text {
+  background: #24292d;
+}
+
 .time .time-colon .time-text,
 .time .time-colon .colon {
   font-size: 35px;
   font-weight: 600;
 }
 
+section.dark .time .time-text .num,
+section.dark .time .colon{
+color: #fff;
+}
+
 .time .time-colon .colon {
   font-size: 40px;
   margin: 0 10px;
+
 }
 
 .time .time-colon .time-text .text {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+section.dark .time .time-colon .text {
+  color: #fff;
 }
